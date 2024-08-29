@@ -1,0 +1,58 @@
+{% extends "index/index.html" %}
+{% load static %}
+
+{% block content %}
+ <div class="main">
+            <div class="first-block">
+                <div class="text-for-first-block">
+                    <p class="title-text">
+                        Hi, I am John,
+                         Creative Technologist
+                    </p>
+                    <p class="text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                <img class="img" src="{% static 'index/images/65a80990af3a0075303343f0d615c92a.png' %}" alt="">
+            </div>
+            <div class="second-block">
+                <div class="position">
+                    <div class="title-for-second-block">
+                        <p class="title">Recent posts</p>
+                        <a href="" class="link-for-second-block">View all</a>
+                    </div>
+                        {% for p in posts %}
+                        <div class="text-for-second-block">
+                            <div class="block-with-text">
+                                <div class="text-in-block">
+                                    <a href="" class="title-text-second-block">{{ p.title }}</a>
+                                    <div class="data">
+                                        <p class="time">{{ p.time_create }}</p>
+                                    </div>
+                                    <p class="text2">{{ p.content }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="third-block">
+                    <div class="title-for-second-block">
+                        <p class="title">Featured works</p>
+                    </div>
+                    {% for w in work %}
+                    <div class="article">
+                        <img class="img-for-third-block" src="{{ w.file.url }}">
+                        <div class="text-for-the-article">
+                            <a href="" class="title-for-article">{{ w.title }}</a>
+                            <p class="text-for-third-block">{{ w.text_content }}</p>
+                        </div>
+                    </div>
+                    </div>
+                 {% endfor %}
+                </div>
+            </div>
+
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}">
+    <title>{{ title }}t</title>
+</head>
+<body>
+        <header>
+            <div class="nav">
+                {% for m in menu %}
+                <a href="" class="navtext" style="text-decoration: none;">{{ m.title }}</a>
+                {% endfor %}
+            </div>
+        </header>
+        {% block content %}
+
+        {% endblock %}
+        <footer></footer>
+    </div>
+</body>
+</html>
